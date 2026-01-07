@@ -39,7 +39,8 @@ pipeline{
                     trivy fs \
                     --severity HIGH,CRITICAL \
                     --exit-code 1 \
-                    --no-progress
+                    --no-progress \
+                    .
                 '''
             }
         }
