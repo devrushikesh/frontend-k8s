@@ -134,7 +134,7 @@ pipeline{
                         --dry-run=client -o yaml | kubectl apply -f -
 
                         helm upgrade --install my-frontend helm/my-frontend \
-                        -f helm/my-app/values-dev.yaml \
+                        -f helm/my-frontend/values-dev.yaml \
                         -n dev \
                         --set image.tag=${IMAGE_TAG} \
                         --wait \
