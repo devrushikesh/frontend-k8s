@@ -1,0 +1,55 @@
+replicaCount: 1
+
+image:
+  repository: 759210286431.dkr.ecr.ap-south-1.amazonaws.com/todo-frontend
+  tag: "4f619a8"
+  pullPolicy: IfNotPresent
+
+podLabels:
+  tier: frontend
+
+service:
+  type: NodePort
+  port: 5173
+
+env:
+  VITE_API_URL: http://my-app:3001
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+# # Production environment - more conservative probe settings
+# livenessProbe:
+#   path: /api/live
+#   initialDelaySeconds: 60
+#   periodSeconds: 15
+#   timeoutSeconds: 10
+#   failureThreshold: 5
+
+# readinessProbe:
+#   path: /api/ready
+#   initialDelaySeconds: 20
+#   periodSeconds: 10
+#   timeoutSeconds: 5
+#   failureThreshold: 5
+
+# startupProbe:
+#   enabled: true
+#   path: /api/health
+#   periodSeconds: 10
+#   timeoutSeconds: 5
+#   failureThreshold: 30
+
+autoscaling:
+  enabled: false
+
+volumes: []
+volumeMounts: []
+
+imagePullSecrets:
+  - name: "ecr-secret"
