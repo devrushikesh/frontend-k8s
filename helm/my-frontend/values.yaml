@@ -10,10 +10,12 @@ podLabels:
 
 service:
   type: NodePort
-  port: 5173
+  port: 80
+  nodePort: 30080
+  targetPort: 80
 
 env:
-  VITE_API_URL: http://my-app:3001
+  VITE_API_URL: http://52.66.127.3:32000
 
 resources:
   limits:
