@@ -53,7 +53,7 @@ pipeline{
                 }
             }
             steps{
-                sh "docker build -t ${ECR_REPO}:${IMAGE_TAG} ."
+                sh "docker build --build-arg VITE_API_URL=http://52.66.127.3:32000 -t ${ECR_REPO}:${IMAGE_TAG} ."
             } 
         }
 
