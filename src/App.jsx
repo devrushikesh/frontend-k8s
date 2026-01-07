@@ -54,7 +54,7 @@ function App() {
     <div className="app">
       <div className="container">
         <header className="app-header">
-          <h1>Todo App</h1>
+          <h1>Todo App By Rushi</h1>
           <p className="stats">
             {completedCount} of {todos.length} completed
           </p>
