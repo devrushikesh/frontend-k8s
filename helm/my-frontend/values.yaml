@@ -15,7 +15,7 @@ service:
   targetPort: 80
 
 env:
-  VITE_API_URL: http://52.66.127.3:35000
+  VITE_API_URL: http://52.66.127.3:32000
 
 resources:
   limits:
