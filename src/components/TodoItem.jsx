@@ -1,6 +1,6 @@
 import './TodoItem.css';
 
-const TodoItem = ({ todo, onToggleComplete, onDelete, onUpdate }) => {
+const TodoItem = ({ todo, onToggleComplete, onDelete }) => {
   const handleToggle = async () => {
     try {
       await onToggleComplete(todo.id, !todo.completed);
